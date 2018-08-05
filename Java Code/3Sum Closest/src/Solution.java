@@ -1,9 +1,13 @@
 import java.util.*;
 
+//https://leetcode.com/problems/3sum-closest/description/
+//Find the sum of 3 numbers closest to the target
+
 class Solution {
     public static int threeSumClosest(int[] nums, int target) {
-        int closestToTarget = 1000000000; //large value that should be overwritten right away
         Arrays.sort(nums); //this will rearrange the array in ascending order in O(log n) time complexity
+        int closestToTarget = nums[0]+nums[1]+nums[2]; //initialize first 3sum to first 3 values in array
+
         for(int i=0;i<nums.length;i++) {
         	int diff = target - nums[i];
         	int j = i+1, k = nums.length-1;
